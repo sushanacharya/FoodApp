@@ -58,3 +58,4 @@ def deleteItem(request, itemId):
     return redirect ('food:index')
 
     #return HttpResponse('Deleted!')
+    #added this ro directly delte the item
