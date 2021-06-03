@@ -1,0 +1,38 @@
+{% extends 'food/base.html' %}
+
+    {% block body %}
+
+        <h1>This is the template for index of food app! 101 </h1>
+
+        {% for item in itemList %}
+            </br>
+            <div class="row">
+                <div class="col-md-1 offset-md-1">
+                    {{ item.id }} <br>
+
+                </div>
+
+                <div class="col-md-3">
+                    <br>
+                    <h3> {{ item.itemName }} </h3> <br>
+                    {{ item.itemDescription}} <br>
+                    {{ item.itemPrice}} <br>
+                </div>
+
+
+                <div class="col-md-2">
+                    <img class="card" height="150px" src="{{item.itemImage}}"/>
+                </div>
+
+                <div class="col-md-2">
+                <a href="{% url 'food:detail' item.id %}">
+                <button type="button" name="" id="" class="btn btn-primary" btn-lg btn-block> 
+                View Details</button>
+                </a>
+                </div>
+            </div> 
+
+            
+        {% endfor %}
+
+    {% endblock body %}

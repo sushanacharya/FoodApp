@@ -1,0 +1,39 @@
+{% extends 'food/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% block body %}
+
+    <div class="container"> 
+        <div>
+            <h2> {{ item.itemName }} </h2><br>
+
+        </div>
+
+        <img src="{{item.itemImage}}" height="250px"/>
+        
+        <p><h4>
+            Item ID: {{item.id}} <br>
+            Item Name: {{ item.itemName }} <br>
+            Item Details: {{ item.itemDescription }} <br>
+            Price: {{ item.itemPrice }}$$ <br>
+            </h4>
+        </p>
+        <a name="" id="" class="btn btn-primary" href="{% url 'food:updateItem' item.id %}" role="button">
+        Update Item</a>
+
+        <a name="" id="" class="btn btn-primary danger" href="{% url 'food:deleteItem' item.id %}" role="button">
+        Delete Item</a>
+    </div>
+    
+{% endblock body %}
+
+
+</body>
+</html>
